@@ -28,7 +28,6 @@ class NX584NGConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             port = user_input[CONF_SERVER_PORT]
             name = user_input[CONF_ALARM_NAME]
             
-
             await self.async_set_unique_id(f"{host}:{port}:{name}")
             self._abort_if_unique_id_configured()
 
@@ -41,9 +40,9 @@ class NX584NGConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             step_id="user",
             data_schema=vol.Schema(
                 {
-                    vol.Required(CONF_SERVER_HOST, default="DEFAULT_SERVER_HOST"): str,
+                    vol.Required(CONF_SERVER_HOST, default=DEFAULT_SERVER_HOST): str,
                     vol.Optional(CONF_SERVER_PORT, default=DEFAULT_SERVER_PORT): int,
-                    vol.Optional(CONF_ALARM_NAME, default="DEFAULT_ALARM_NAME"): str,
+                    vol.Optional(CONF_ALARM_NAME, default=DEFAULT_ALARM_NAME): str,
                 }
             ),
             errors=errors,
@@ -65,7 +64,7 @@ class NX584NGOptionsFlowHandler(config_entries.OptionsFlow):
         if user_input is not None:
             return self.async_create_entry(title="", data=user_input)
 
-        return self.async_show_form(
+        return await self.async_show_form(
             step_id="init",
             data_schema=vol.Schema({}),
         )
