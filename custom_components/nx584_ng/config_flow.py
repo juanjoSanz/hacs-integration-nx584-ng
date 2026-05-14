@@ -29,7 +29,7 @@ class NX584NGConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             name = user_input[CONF_ALARM_NAME]
             
 
-            await self.async_set_unique_id(f"{host}:{port}")
+            await self.async_set_unique_id(f"{host}:{port}:{name}")
             self._abort_if_unique_id_configured()
 
             return self.async_create_entry(

@@ -6,11 +6,13 @@
         "description": "Enter the connection details for your pynx584 server instance.",
         "data": {
           "host": "Host/IP Address",
-          "port": "Port"
+          "port": "Port",
+          "name": "Alarm Name"
         },
         "data_description": {
           "host": "Example: localhost",
-          "port": "Default: 5007"
+          "port": "Default: 5007",
+          "name": "Default: NX584"
         }
       }
     },
