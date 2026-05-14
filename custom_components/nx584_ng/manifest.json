@@ -3,7 +3,7 @@
   "name": "NX584-ng",
   "version": "0.0.1",
   "config_flow": true,
-  "documentation": "https://github.com/juanjoSanz/hacs-integration-nx584",
+  "documentation": "https://github.com/juanjoSanz/hacs-integration-nx584-ng",
   "requirements": ["pynx584==0.7"],
   "codeowners": ["@juanjoSanz"],
   "iot_class": "local_polling"
