@@ -5,10 +5,10 @@ import logging
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.const import CONF_HOST, CONF_PORT
+from homeassistant.const import CONF_SERVER_HOST, CONF_SERVER_PORT, CONF_ALARM_NAME
 from homeassistant.core import callback
 
-from .const import DOMAIN, DEFAULT_PORT
+from .const import DOMAIN, DEFAULT_SERVER_HOST, DEFAULT_SERVER_PORT, DEFAULT_ALARM_NAME
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -24,8 +24,10 @@ class NX584NGConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         errors = {}
 
         if user_input is not None:
-            host = user_input[CONF_HOST]
-            port = user_input[CONF_PORT]
+            host = user_input[CONF_SERVER_HOST]
+            port = user_input[CONF_SERVER_PORT]
+            name = user_input[CONF_ALARM_NAME]
+            
 
             await self.async_set_unique_id(f"{host}:{port}")
             self._abort_if_unique_id_configured()
@@ -39,8 +41,9 @@ class NX584NGConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             step_id="user",
             data_schema=vol.Schema(
                 {
-                    vol.Required(CONF_HOST): str,
-                    vol.Optional(CONF_PORT, default=DEFAULT_PORT): int,
+                    vol.Required(CONF_SERVER_HOST, default="DEFAULT_SERVER_HOST"): str,
+                    vol.Optional(CONF_SERVER_PORT, default=DEFAULT_SERVER_PORT): int,
+                    vol.Optional(CONF_ALARM_NAME, default="DEFAULT_ALARM_NAME"): str,
                 }
             ),
             errors=errors,
