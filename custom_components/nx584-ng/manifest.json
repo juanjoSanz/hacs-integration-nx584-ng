@@ -1,6 +1,7 @@
 {
   "domain": "nx584-ng",
-  "name": "NX584 Alarm",
+  "name": "NX584-ng",
+  "version": "0.0.1",
   "config_flow": true,
   "documentation": "https://github.com/juanjoSanz/hacs-integration-nx584",
   "requirements": ["pynx584==0.7"],
