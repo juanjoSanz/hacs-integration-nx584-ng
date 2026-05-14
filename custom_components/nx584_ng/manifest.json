@@ -1,5 +1,5 @@
 {
-  "domain": "nx584-ng",
+  "domain": "nx584_ng",
   "name": "NX584-ng",
   "version": "0.0.1",
   "config_flow": true,
