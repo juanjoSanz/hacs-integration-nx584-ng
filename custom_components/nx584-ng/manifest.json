@@ -1,5 +1,5 @@
 {
-  "domain": "nx584",
+  "domain": "nx584-ng",
   "name": "NX584 Alarm",
   "config_flow": true,
   "documentation": "https://github.com/juanjoSanz/hacs-integration-nx584",

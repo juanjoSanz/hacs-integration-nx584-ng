@@ -3,4 +3,4 @@ refresh_data:
   description: Forces the NX584 integration to poll the panel immediately.
   target:
     device:
-      integration: nx584
+      integration: nx584-ng
