@@ -1,0 +1,29 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  hacs:
+    name: HACS
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: hacs/action@main
+        with:
+          category: theme
+
+  whiskers:
+    name: Whiskers
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: catppuccin/setup-whiskers@v2
+      - name: Generate themes
+        run: whiskers home-assistant.tera
+      - name: Ensure generating themes didn't change anything
+        run: git diff --exit-code

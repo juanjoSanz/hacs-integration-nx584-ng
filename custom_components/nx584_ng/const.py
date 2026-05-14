@@ -1,2 +1,3 @@
 DOMAIN = "nx584_ng"
+DEFAULT_PORT = 5007
 CONF_ZONE_FILTER = "zone_filter"
