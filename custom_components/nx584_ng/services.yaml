@@ -1,0 +1,6 @@
+refresh_data:
+  name: Force Refresh
+  description: Forces the NX584 integration to poll the panel immediately.
+  target:
+    device:
+      integration: nx584

@@ -1,0 +1,20 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "NX584 Alarm Gateway",
+        "description": "Enter the connection details for your pynx584 server instance.",
+        "data": {
+          "host": "Host/IP Address",
+          "port": "Port"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to the NX584 server. Check host and port."
+    },
+    "abort": {
+      "already_configured": "This NX584 instance is already configured."
+    }
+  }
+}

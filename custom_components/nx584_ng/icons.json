@@ -1,0 +1,23 @@
+{
+  "services": {},
+  "entity": {
+    "binary_sensor": {
+      "default": {
+        "state": {
+          "off": "mdi:shield-check",
+          "on": "mdi:shield-alert"
+        }
+      }
+    },
+    "alarm_control_panel": {
+      "default": {
+        "state": {
+          "disarmed": "mdi:shield-off",
+          "armed_home": "mdi:shield-home",
+          "armed_away": "mdi:shield-lock",
+          "triggered": "mdi:bell-ring"
+        }
+      }
+    }
+  }
+}
