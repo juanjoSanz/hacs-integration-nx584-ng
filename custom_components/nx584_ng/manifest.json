@@ -5,7 +5,7 @@
   "config_flow": true,
   "documentation": "https://github.com/juanjoSanz/hacs-integration-nx584-ng",
   "issue_tracker": "https://github.com/juanjoSanz/hacs-integration-nx584-ng/issues",
-  "requirements": ["pynx584==0.7"],
+  "requirements": ["pynx584==0.8.2"],
   "codeowners": ["@juanjoSanz"],
   "iot_class": "local_polling"
 }
